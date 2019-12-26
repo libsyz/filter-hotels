@@ -32,17 +32,16 @@ import { bus } from './../main.js'
     },
     methods: {
       filter() {
-        this.priceFilter();
-        this.ratingFilter();
-        console.table(this.filteredHotels);
+        this.filterByPrice();
+        this.filterByRating();
         bus.$emit('filtered', this.filteredHotels);
       },
 
-      priceFilter() {
+      filterByPrice() {
         this.filteredHotels = this.minFilter(this.price, this.hotels, "price");
       },
 
-      ratingFilter() {
+      filterByRating() {
         this.filteredHotels = this.minFilter(this.rating, this.filteredHotels, "rating")
       },
 
@@ -62,8 +61,6 @@ import { bus } from './../main.js'
     computed: {
     }
 }
-
-
 
 </script>
 
