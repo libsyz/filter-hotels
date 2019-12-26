@@ -1,17 +1,24 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1> Vue Filter Demo </h1>
+    <div class="filter-container">
+      <div class="filter-header"> Filter Hotels </div>
+      <filter-dialogue/>
+    </div>
+
+    <hotels-list/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HotelsList from './components/HotelsList.vue'
+import FilterDialogue from './components/FilterDialogue.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    FilterDialogue,
+    HotelsList
   }
 }
 </script>
@@ -23,6 +30,18 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+
+}
+
+.filter-container {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+
+body {
+  background-color: #41B883;
 }
 </style>
